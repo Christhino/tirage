@@ -36,3 +36,118 @@
     transform: rotate(360deg);
   }
 }
+
+
+.App {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+
+}
+
+.team {
+  border: 2px solid #666;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.team:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.team.selected {
+  background-color: #f8b195;
+}
+
+.team.selected .team-content {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+.team.selected .team-content .team-name {
+  font-weight: 500;
+}
+
+.team-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.team-number {
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  background-color: #f8b195;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d9886c;
+  transform: scale(1.1);
+}
+
+/* Animate.css */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.team.bouncing {
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+
