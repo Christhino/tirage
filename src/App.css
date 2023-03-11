@@ -1,0 +1,260 @@
+.App {
+  text-align: center;
+  background-color: #ffffff;
+  background-image: url('./assets/ai.png');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.App {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+
+}
+
+.team {
+  border: 2px solid #666;
+  border-radius: 10px;
+  width: 16%;
+  height: 150px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+  
+}
+.logo {
+  width: 60%;
+  border-radius: 10px;
+}
+.about {
+    width: 60%;
+}
+@media screen and (max-width: 900px) {
+  .team {
+    width: 100%;
+    height: 300px;
+  }
+  .devhunt {
+    width: 160px !important;
+    font-size: 15px !important;
+  }
+  .AEENI_Logo {
+    width: 30% !important;
+  }
+}
+.team:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.team.selected {
+  background-color: #f8b195;
+}
+
+.team.selected .team-content {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+.team.selected .team-content .team-name {
+  font-weight: 500;
+}
+
+.team-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.team-number {
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+.AEENI_Logo {
+  width: 20%;
+  position: fixed;
+  left: 70%;
+}
+.btn {
+  background-color: #5c1a23;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.index {
+  
+ 
+}
+.rank {
+  display: inline-block;
+  background-color: #5550f4;
+
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: calc(-0.625rem);
+  right: calc(-0.625rem);
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  font-size: -0.3rem;
+  font-weight: 700;
+  /* animation: jump 1s infinite; */
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* @keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+/* .rank:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  top: -5px;
+  right: -5px;
+  transform: translate(50%, -50%);
+} */
+.btn:hover {
+  background-color: #d9886c;
+  transform: scale(1.1);
+}
+
+.devhunt{
+  background-color: #ca8f57;
+  color: #fff;
+  width: 25%;
+  font-size: 25px;
+  text-align: center;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: auto;
+}
+.final  {
+  color: #5d1924
+}
+/* Animate.css */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.team.bouncing {
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+
