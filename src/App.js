@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import anime from "animejs";
 import { css } from "@emotion/react";
 
-
+import Lottie from 'react-lottie';
+import animationData from './assets/Annimation/anime.json';
 
 import Logo from  './assets/Alternative2.png'
 
@@ -27,7 +28,8 @@ function App() {
 
   const [selectedTeam, setSelectedTeam] = useState(null);
   const [shuffle, setShuffle] = useState(false);
-  
+  const [loading, setLoading] = useState(false);
+
   const [order, setOrder] = useState([]);
 
   const [isDrawing, setIsDrawing] = useState(false);
@@ -60,6 +62,8 @@ function App() {
   };
 
   const handleTeamClick = (team) => {
+   
+
     setTimeout(() => {
         const newTeams = [...teams];
         for (let i = newTeams.length - 1; i > 0; i--) {
@@ -68,9 +72,23 @@ function App() {
         }
         setTeams(newTeams);
         setOrder(newTeams.slice().sort());
+
     }, 3000); 
+
+    
   };  
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
+
   const Anime =  () => {
+      
       const params = {
           targets: '.team',
           translateY: [
@@ -83,7 +101,6 @@ function App() {
             setSelectedTeam(teamRandom)
           }
       }
-
       anime(params)
   }
   
@@ -103,6 +120,12 @@ function App() {
       <h1>10 équipes en lice  pour 2 tickets à l'HIU</h1>
      
         <div className="teams">
+          {loading && (
+              <div className="loading-animation">
+                <Lottie options={defaultOptions} height={200} width={200} />
+              </div>
+          )}
+
           {teams.map((team,index) => (
             <div
               key={team.id}

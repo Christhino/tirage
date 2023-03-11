@@ -69,8 +69,20 @@
   align-items: center;
   position: relative;
   transition: all 0.3s ease;
+   
+  transform-style: preserve-3d;
+  animation: animate 4s  linear infinite;
   
 }
+@keyframes animate {
+  0%{
+     transform: rotateX(-30deg) rotateY(0deg);
+  }
+  60%{
+    transform: rotateX(-30deg)  rotateY(360deg);
+  }
+}
+
 .logo {
   width: 60%;
   border-radius: 10px;
@@ -187,6 +199,32 @@
     transform: scale(1);
   }
 }
+
+
+/* .team-card {
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-25%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-75%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} */
 
 /* @keyframes jump {
   0% {
